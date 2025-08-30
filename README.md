@@ -84,22 +84,22 @@ use email or GitHub issues. We would like not to handle these in class.
  - Lecture: DNS HA setups
  - Lab: Secondary Bind9
 
-[Week 15: Final lab](./exam)
+[Week 15: Final lab](./final-lab)
  - Lecture: Final lab task
  - Lab: Final lab
 
-Week 16: Exam
- - First exam attempt (optional)
+Week 16: Final lab defences
+ - First final lab defence attempt (optional)
 
-## Exam times
-
-TODO - Discord
+## Final lab defence times
 
 TODO - Discord
 
 TODO - Discord
 
-You can choose any 2 times to take the exam in addition to week 16 exam attempt, 3 attempts in total.
+TODO - Discord
+
+You can choose any 2 times to present your final lab in addition to week 16, 3 attempts in total.
 
 ## Teacher contacts
 
