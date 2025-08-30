@@ -15,6 +15,6 @@ Course rules
    can check your code yourself. If you need your code to be checked additionally,
    please ask.
 
-6. Exam is only accessible to those who have completed all the lab tasks.
+6. Final lab is only accessible to those who have completed all the lab tasks.
 
 7. Course result is either pass or fail (no grades).
