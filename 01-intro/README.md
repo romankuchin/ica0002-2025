@@ -88,7 +88,7 @@ Teachers will have this version installed and use it to check your tasks.
 Your code is considered working only if it executes successfully on Ansible 11.9.0.
 If you're using other Ansible versions -- you're on your own with them.
 
-Note: you will need Python v3.13 or newer to use this version of Ansible.
+Note: you will need Python v3.12 or newer to use this version of Ansible.
 
 For Linux or OS X, we recommend to use Python virtual env:
 
@@ -122,7 +122,7 @@ SSH access details on your page. Note the SSH port number!
 Finally, test that SSH access works -- run this command on the **control node**
 (replace the `122` with the port number from the list above):
 
-    ssh -p122 ubuntu@193.40.156.67 uptime
+    ssh -p122 ubuntu@193.40.157.25 uptime
 
 The command above should print the virtual machine uptime (a few minutes, maybe
 hours). This means that you can access your virtual machine via SSH.
@@ -154,7 +154,7 @@ Note: directory structure and file names matter! Create the files and
 directories named exactly as requested.
 
 Step 3: Update your inventory file named `hosts` -- check your own page from
-http://193.40.156.67/students.html to find the correct connection parameters.
+http://193.40.157.25/students.html to find the correct connection parameters.
 
 Step 4: Run the Ansible playbook:
 
