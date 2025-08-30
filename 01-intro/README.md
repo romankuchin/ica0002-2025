@@ -83,12 +83,12 @@ continue with the next task.
 
 **(on a Control node -- same machine where your SSH keys reside)**
 
-Note: we will use Ansible version 11.9.0 (ansible-core 2.18.8) for this course.
+Note: we will use Ansible version 11.9.0 (`ansible-core` version 2.18.8) for this course.
 Teachers will have this version installed and use it to check your tasks.
 Your code is considered working only if it executes successfully on Ansible 11.9.0.
 If you're using other Ansible versions -- you're on your own with them.
 
-Note: you will need Python v3.13 or newer to use this version of Ansible.
+Note: you will need Python v3.11 or newer to use this version of Ansible.
 
 For Linux or OS X, we recommend to use Python virtual env:
 
