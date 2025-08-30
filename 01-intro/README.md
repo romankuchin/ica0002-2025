@@ -60,7 +60,7 @@ check for existing SSH keys on your machine by running
     ls -la ~/.ssh
 
 If there are files named `id_rsa` and `id_rsa.pub` you're probably good to go
-already. If not, generate a new keypair by running `ssh-keygen`.
+already. If not, generate a new keypair by running `ssh-keygen -t rsa -m pem`.
 
 Your **public** SSH key can be found in `~/.ssh/id_rsa.pub` file. Add this key
 (entire file content) to your GitHub account:
