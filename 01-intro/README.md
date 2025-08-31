@@ -59,16 +59,16 @@ check for existing SSH keys on your machine by running
 
     ls -la ~/.ssh
 
-If there are files named `id_[rsa|dsa|ecdsa|ed25519]` and `id_[rsa|dsa|ecdsa|ed25519].pub` you're probably good to go
+If there are files named `id_[rsa|ed25519]` and `id_[rsa|ed25519].pub` you're probably good to go
 already. If not, generate a new keypair by running `ssh-keygen`.
 
-Your **public** SSH key can be found in `~/.ssh/id_[rsa|dsa|ecdsa|ed25519].pub` file. Add this key
+Your **public** SSH key can be found in `~/.ssh/id_[rsa|ed25519].pub` file. Add this key
 (entire file content) to your GitHub account:
  - In GitHub web UI click your profile icon in the top right corner
  - Select `Settings`
  - Select `SSH and GPG keys` in the left menu
  - Click `New SSH key`
- - Paste the content of `~/.ssh/id_[rsa|dsa|ecdsa|ed25519].pub` file to the `Key` field
+ - Paste the content of `~/.ssh/id_[rsa|ed25519].pub` file to the `Key` field
  - click `Add SSH key`
 
 Once you have added your public key to your GitHub account our bot should detect
