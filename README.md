@@ -2,16 +2,16 @@
 
 Course rules: [link](rules.md).
 
-Video lectures: [link](TODO).
+Video lectures: [link](https://echo360.org.uk/section/28323b50-9579-4995-9a01-4ae5d0499002/public).
 
-[Discord](https://discord.com/download) channel invite: [link](TODO).
+[Discord](https://discord.com/download) channel invite: [link](https://discord.gg/2bxbEaAf).
 
 Virtual machines: [link](http://193.40.157.25/students.html).
 
 Class times:
 
- - Wednesday 16:00 -- room 314 -- lecture -- video is streamed&recorded
- - Wednesday 17:45 -- room 217 -- lab -- video is streamed&recorded
+ - Wednesday 16:00 -- room 314 -- lecture -- video is recorded
+ - Wednesday 17:45 -- room 217 -- lab -- video is recorded
  - Thursday 16:00 -- room 217 -- lab
  - Thursday 17:45 -- room 217 -- lab
 
