@@ -8,7 +8,7 @@ server for our app. We'll also learn how to use Ansible variables and Vault.
 This and some following labs have tasks to handle secrets (passwords, keys etc.). Make sure
 **not to commit plain text secrets to GitHub!**
 
-Should you make this mistake, change the secret at once, encrypt it propperly (details are provided
+Should you make this mistake, change the secret at once, encrypt it properly (details are provided
 below and in lecture slides) and push the next Git commit that overwrites the secret. Leaked secret
 value still remains in the Git history but as you have changed it -- it's not a problem anymore.
 
@@ -157,10 +157,10 @@ setting:
 
 This behavior needs to be changed -- web application will connect to the database from the different
 host, so MySQL server should bind to public interface to accept external connections. Easiest way to
-achive this is to configure MySQL to bind to `0.0.0.0` which means 'any possible public interface
+achieve this is to configure MySQL to bind to `0.0.0.0` which means 'any possible public interface
 on this host'.
 
- > Most of the tutorials in the Internet will suggest you to change `/etc/mysq/mysql.cnf` or
+ > Most of the tutorials in the Internet will suggest you to change `/etc/mysql/mysql.cnf` or
  > `/etc/mysql/mysql.conf.d/mysqld.cnf` or any other similar file. It would work, but there is a
  > better way -- you can _override_ the configuration instead of changing it.
 
@@ -221,7 +221,7 @@ from the one that you have added to the inventory file:
  - you (and Ansible) connect to the _public_ IP (`193.40.157.25`) of the managed host
  - other hosts in the same network connect to _internal_ IP
 
-Plase use the "<yourname>-2" machine address; we defined it as database server in the task 2.
+Please use the "<yourname>-2" machine address; we defined it as database server in the task 2.
 
 Password **must** be encrypted. You can get the encrypted value using Ansible Vault you have set up
 in the task 1:
@@ -317,7 +317,7 @@ of the `mysql_user` module:
     host: "%"
 
 While creating the MySQL user for your application, make sure that it has access **only** to its own
-database (not the other databases). This can be achived with `priv` attribute of the `mysql_user`
+database (not the other databases). This can be achieved with `priv` attribute of the `mysql_user`
 module, and `mysql_database` variable you defined in the task 6:
 
     priv: "{{ mysql_database }}.*:ALL"
@@ -413,7 +413,7 @@ something like
                             ^------^
                             Add this
 
-Run the Asnible again to apply changes, and check if everything is working as expected.
+Run the Ansible again to apply changes, and check if everything is working as expected.
 
 
 ## Task 9: Protect the sensible info
@@ -458,7 +458,7 @@ Once done, run the Ansible again:
 
     ansible-playbook infra.yaml
 
-This should now change the uWSGI configuration file for AGAMA, and restart wthe uWSGI.
+This should now change the uWSGI configuration file for AGAMA, and restart the uWSGI.
 
 To verify that the file is now protected from unauthorized reading, run this command on the managed
 host as an unprivileged user (`ubuntu`):
