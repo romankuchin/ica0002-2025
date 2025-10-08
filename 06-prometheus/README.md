@@ -12,7 +12,7 @@ Install Prometheus on VM that doesn't have Agama running.
 
 Configure Prometheus job "linux" with static_configs. Include **all** your VMs there, even future ones, don't delete job "prometheus" which comes with default config.
 
-Hint: use Ansible variable "groups['all']".
+Hint: use Ansible variable "groups['all']" and for loops.
 
 It's not allowed to use IP addresses in Prometheus config, only names are allowed.
 
@@ -26,6 +26,9 @@ Reuse existing `nginx` role.
 
 Hint: use Ansible variable "groups['prometheus']" for condition in Nginx config.
 
+    {% if inventory_hostname in groups['prometheus'] %}
+        ...
+
 ## Task 4: Adjust Prometheus service
 
 To make Prometheus reachable from outside, run it with
@@ -33,7 +36,8 @@ To make Prometheus reachable from outside, run it with
     --web.external-url=http://<your_public_http_endpoint>/prometheus
 
 Put required arguments in /etc/default/prometheus. Adjust metrics_path
-for job "prometheus" to make prometheus self-monitoring work. 
+for job "prometheus" in prometheus config to make prometheus self-monitoring work.
+Default `/metrics` won't work because all links in prometeheus will have prefix `/prometheus`, so metric_path will become `/prometheus/metrics`.
 
 ## Task 5: Write some Prometheus queries
 
