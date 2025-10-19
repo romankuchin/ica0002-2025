@@ -53,11 +53,9 @@ Structure of the file you can find in 05-demo or in /etc/bind/db.local on your V
 
 Check Bind9 docs page 26 to learn how to reference primary(master) zone from config file.
 
-Use variables to feed your master zone file:
-    {{ hostvars[<vm_name>]['ansible_default_ipv4']['address'] }}
-Where '<vm_name>' is your managed host name as defined in inventory file (for example, romankuchin-1).
+Use variables to feed your master zone file: `{{ hostvars[<vm_name>]['ansible_default_ipv4']['address'] }}` -- where `<vm_name>` is your managed host name as defined in inventory file (for example, `romankuchin-1`).
 
-You can get these variables values by running Ansible module "setup" without parameters. [Docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html). Same module is called during gathering facts.
+You can get these variables values by running Ansible module `setup` without parameters: [docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html). Same module is called during the `gathering_facts` stage.
 
 Check what variables were collected with Ansible "debug" module. [Docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html)
 
