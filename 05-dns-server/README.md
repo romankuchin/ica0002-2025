@@ -41,15 +41,15 @@ Allow queries to your DNS server only from our local network and localhost: 192.
 
 That networks are subject to change, means that values should come from variables section.
 
-Use Bind9 docs, they have good config examples on page 25. [Link](https://downloads.isc.org/isc/bind9/cur/9.18/doc/arm/Bv9ARM.pdf)
+Use Bind9 docs, they have good config examples on page 25: [link](https://downloads.isc.org/isc/bind9/cur/9.18/doc/arm/Bv9ARM.pdf).
 
-Default config file location: /etc/bind/named.conf.options
+Default config file location: `/etc/bind/named.conf.options`.
 
 ## Task 5: Configure master zone
 
-Expected file location on DNS server: /var/cache/bind/db.{startup_name}
+Expected file location on DNS server: `/var/cache/bind/db.{startup_name}`.
 
-Structure of the file you can find in 05-demo or in /etc/bind/db.local on your VM with Bind9 installed.
+Structure of the file you can find in 05-demo or in `/etc/bind/db.local` on your VM with Bind9 installed.
 
 Check Bind9 docs page 26 to learn how to reference primary(master) zone from config file.
 
@@ -57,7 +57,7 @@ Use variables to feed your master zone file: `{{ hostvars[<vm_name>]['ansible_de
 
 You can get these variables values by running Ansible module `setup` without parameters: [docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html). Same module is called during the `gathering_facts` stage.
 
-Check what variables were collected with Ansible "debug" module. [Docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html)
+Check what variables were collected with Ansible `debug` module: [docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html).
 
 Example of playbook:
 
@@ -75,16 +75,16 @@ Example of playbook:
 
 By default DNS settings in Ubuntu are managed by service called "systemd-resolved". If you want to manage DNS settings manually, you have to stop this service and make sure it won't start after VM restart.
 
-List of DNS servers should be in /etc/resolv.conf.
+List of DNS servers should be in `/etc/resolv.conf`.
 
-Example of /etc/resolv.conf file:
+Example of `/etc/resolv.conf` file:
 
     nameserver 192.168.42.117
     search pythox.io
 
-Use variables to populate this files: {{ hostvars[<vm_with_bind9>]['ansible_default_ipv4']['address'] }} and {{ startup_name }}.
+Use variables to populate this files: `{{ hostvars[<vm_with_bind9>]['ansible_default_ipv4']['address'] }}` and `{{ startup_name }}`.
 
-Make sure you that you have IPs of *working* DNS servers in /etc/resolv.conf at any given point of time.
+Make sure you that you have IPs of *working* DNS servers in `/etc/resolv.conf` at any given point of time.
 
 ## Task 7: Update AGAMA MySQL connection
 
@@ -94,11 +94,11 @@ Since now it is not allowed to use IP addresses in configuration files unless ex
 
 ## Hints:
 
-Don't forget to restart service after config changes. Use Ansible "service" module for that.
+Don't forget to restart service after config changes. Use Ansible `service` module for that.
 
-Use "named-checkconf" to check syntax of your Bind9 configs. Use "named-checkzone" to check syntax of your zone files.
+Use `named-checkconf` command to check the syntax of your Bind9 configs. Use `named-checkzone` command to check the syntax of your zone files.
 
-Use online Jinja2 compiler to try your templates: https://j2live.ttl255.com/
+Use online Jinja2 compiler to try your templates: https://j2live.ttl255.com/.
 
 ## Expected result
 
