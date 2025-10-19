@@ -4,27 +4,29 @@ In this lab we will install some monitoring. It's not a complete solution, we wi
 
 ## Task 1: Install Prometheus Node Exporters
 
-Install Prometheus node exporters on all your VMs. No need to configure them, default settings are good enough. Installation can be done in "init" role.
+Install Prometheus node exporters on all your VMs. No need to configure them, default settings are good enough. Installation can be done in the `init` role.
 
 ## Task 2: Install and configure Prometheus
 
 Install Prometheus on VM that doesn't have Agama running.
 
-Configure Prometheus job "linux" with static_configs. Include **all** your VMs there, even future ones, don't delete job "prometheus" which comes with default config.
+Configure Prometheus job "linux" with static_configs. Include **all** your VMs there, even future ones.
 
-Hint: use Ansible variable "groups['all']" and for loops.
+Don't delete the job "prometheus" which comes with default config.
 
-It's not allowed to use IP addresses in Prometheus config, only names are allowed.
+Hint: use Ansible variable `groups['all']` and for loops.
+
+It's not allowed to use IP addresses in the Prometheus config, only DNS names are allowed.
 
 ## Task 3: Make Prometheus available from outside
 
-Install Nginx and configure reverse proxy on VM with prometheus:
+Install Nginx and configure reverse proxy on the VM with Prometheus installed:
 
     /prometheus -> localhost:9090
 
 Reuse existing `nginx` role.
 
-Hint: use Ansible variable "groups['prometheus']" for condition in Nginx config.
+Hint: use Ansible variable `groups['prometheus']` for condition in Nginx config.
 
     {% if inventory_hostname in groups['prometheus'] %}
         ...
@@ -35,16 +37,16 @@ To make Prometheus reachable from outside, run it with
 
     --web.external-url=http://<your_public_http_endpoint>/prometheus
 
-Put required arguments in /etc/default/prometheus. Adjust metrics_path
-for job "prometheus" in prometheus config to make prometheus self-monitoring work.
-Default `/metrics` won't work because all links in prometeheus will have prefix `/prometheus`, so metric_path will become `/prometheus/metrics`.
+Put the required arguments into the `/etc/default/prometheus` file. Adjust `metrics_path`
+for job `prometheus` in the Prometheus config to make Prometheus self-monitoring work.
+Default `/metrics` won't work because all the links in Prometeheus will have prefix `/prometheus`, so `metric_path` will become `/prometheus/metrics`.
 
 ## Task 5: Write some Prometheus queries
 
 Using [docs](https://prometheus.io/docs/prometheus/latest/querying/basics/)
 write a query for memory consumption and average CPU load for each VM.
 
-Save queries to prom_queries.txt, you will use them during next lab.
+Save queries to `prom_queries.txt`, you will use them during next lab.
 
 ## Expected result
 
@@ -69,8 +71,6 @@ Prometheus and Node Exporters are installed and configured with this command:
 Running the same command again does not make any changes to any of the managed
 hosts.
 
-After playbook execution all targets at \<your_VM_http_link\>/prometheus/classic/targets should be `UP`: all VMs + prometheus itself.
+After playbook execution all targets at \<your_VM_http_link\>/prometheus/classic/targets should be `up`: all the VMs + Prometheus itself.
 
 After playbook execution you should be able to query historical data from Prometheus web interface \<your_VM_http_link\>/prometheus/classic/graph.
-
-
