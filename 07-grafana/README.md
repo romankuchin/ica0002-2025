@@ -115,4 +115,4 @@ After playbook execution you should be able to:
 
 1. See Grafana dashboard by using \<your_VM_http_link\>/grafana.
 2. Check your Prometheus web interface by using \<your_VM_http_link\>/prometheus (lab 6).
-3. Access Agama by using \<your_VM_http_link\> (lab04).
+3. Access Agama by using \<your_VM_http_link\> (lab 4).
