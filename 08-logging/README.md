@@ -4,7 +4,7 @@ In this lab we will setup centralized logging.
 
 ## Task 1: Install Loki
 
-Use VM without prometheus. Follow the official install guide:
+Use VM without Prometheus. Follow the official install guide:
 https://grafana.com/docs/loki/latest/setup/install/local/#install-using-apt-or-rpm-package-manager
 
 ## Task 2: Install Promtail
@@ -94,11 +94,11 @@ Examples of logQL queries for all events (not only valid ones):
 
 Do not forget to add Loki to provisioned datasources in Grafana.
 
-Usefull docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
+Useful docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
 
 ## Task 7: Test your SLO
 
-1. Drop agama database in MySQL to verify that availability goes down.
+1. Drop `agama` database in MySQL to verify that availability goes down.
 2. Add latency between VMs with
 
         tc qdisc add dev ens3 root netem delay 100ms 50ms
