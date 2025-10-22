@@ -9,7 +9,7 @@ https://grafana.com/docs/loki/latest/setup/install/local/#install-using-apt-or-r
 
 ## Task 2: Install Promtail
 
-Install it to all VMs (same docs as in task 1).
+Install it to all VMs in init role(same docs as in task 1).
 Files to track:
 
   - /var/log/syslog
@@ -31,7 +31,9 @@ And allow developers to view it without login:
 allow anonymous grafana access as viewer for Main Org.
 Docs: https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/anonymous-auth/#configuration
 
-Don't forget to add new json in your Ansible repo!
+Don't forget to add new json in your Ansible repo.
+
+Don't forget to add Loki to provisioned datasources in Grafana.
 
 ## Task 4: Add Promtail and Loki monitoring to main Grafana dashboard
 
@@ -39,9 +41,9 @@ Make sure that you gather metrics from Promtail and Loki.
 
 Add to main dashboard rate of `loki_log_messages_total` and rate of `promtail_sent_entries_total`.
 
-Don't forget to update json in your Ansible repo!
+Don't forget to update json in your Ansible repo.
 
-## Task 5: Create SLO.md
+## Task 5: Create slo.md
 
 Prepare documentation for SRE team. Write at least 2 user journeys for main Agama page. Describe SLIs and SLOs.
 
@@ -92,8 +94,6 @@ Examples of logQL queries for all events (not only valid ones):
     |~ `^[23]\\d\\d ` [10m])
     / rate({filename="/var/log/nginx/agama.log"}[10m]))
 
-Do not forget to add Loki to provisioned datasources in Grafana.
-
 Usefull docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
 
 ## Task 7: Test your SLO
@@ -117,7 +117,6 @@ Your repository contains these files and directories:
     infra.yaml
     slo.md
     roles/loki/tasks/main.yaml
-    roles/promtail/tasks/main.yaml
 
 Your repository also contains all the required files from the previous labs.
 
