@@ -13,7 +13,7 @@ Install it to all VMs in init role(same docs as in task 1).
 Files to track:
 
   - /var/log/syslog
-  - /var/log/uwsgi/agama.log
+  - /var/log/uwsgi/app/agama.log
   - /var/log/nginx/access.log
   - /var/log/nginx/error.log
 
