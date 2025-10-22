@@ -96,7 +96,7 @@ Examples of logQL queries for all events (not only valid ones):
 
 Do not forget to add Loki to provisioned datasources in Grafana.
 
-Usefull docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
+Useful docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
 
 ## Task 7: Test your SLO
 
