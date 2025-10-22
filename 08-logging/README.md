@@ -60,11 +60,15 @@ how you record success or failure. Describe your specification as the proportion
 events that were good. Make sure that your SLO specifies both a target and a 
 measurement window.
 
-User Journey: 
-SLI Type: 
-SLI Specification: 
-SLI Implementations:  
-SLO: 
+User Journey:
+
+SLI Type:
+
+SLI Specification:
+
+SLI Implementations:
+
+SLO:
 
 ## Task 6: Setup SLI tracking
 
