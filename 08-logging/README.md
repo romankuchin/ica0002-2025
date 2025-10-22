@@ -74,7 +74,7 @@ SLO:
 
 Configure Nginx logs for Agama SLI tracking and start collecting them into Loki.
 
-Make sure you're collecting only `valid` events (requests to prometheus/grafana are not considered valid for main agama page SLI)! Separate access_log for agama will make it mich easier.
+Make sure you're collecting only `valid` events (requests to prometheus/grafana are not considered valid for main agama page SLI)! Separate access_log for agama will make it much easier.
 
 Adjust Grafana main dashboard, add SLO as thresholds to SLI tracking panels.
 
