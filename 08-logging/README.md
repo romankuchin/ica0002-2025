@@ -21,6 +21,10 @@ Make sure that Promtail will keep its state in case of VM reboot (do not store a
 
 Do not track files that do not exist.
 
+Add `promtail` user to `adm` for syslog access.
+
+Allow to read `/var/log/uwsgi/app/agama.log` for adm group.
+
 Use {{ inventory_hostname }} for hostname label.
 
 Send logs from these files to Loki.
@@ -84,7 +88,7 @@ Examples of logQL queries for all events (not only valid ones):
 
     avg_over_time(
     {filename="/var/log/nginx/agama.log"}
-    | regexp '(?P<latency>\d+\.\d+)$'
+    | regexp "(?P<latency>\d+\.\d+)$"
     | unwrap latency
     [10m]
     )
