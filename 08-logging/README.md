@@ -23,7 +23,7 @@ Do not track files that do not exist.
 
 Add `promtail` user to `adm` for syslog access.
 
-Allow to read `/var/log/uwsgi/app/agama.log` for adm group.
+Allow group `adm` to read `/var/log/uwsgi/app/agama.log`.
 
 Use {{ inventory_hostname }} for hostname label.
 
