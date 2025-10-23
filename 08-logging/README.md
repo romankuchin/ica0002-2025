@@ -31,6 +31,8 @@ Send logs from these files to Loki.
 
 ## Task 3: Create new dashboard with Agama logs
 
+Agama logs are in `/var/log/uwsgi/app/agama.log`.
+
 And allow developers to view it without login: 
 allow anonymous grafana access as viewer for Main Org.
 Docs: https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/anonymous-auth/#configuration
