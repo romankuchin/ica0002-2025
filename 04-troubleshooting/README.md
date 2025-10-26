@@ -86,7 +86,7 @@ another for a standalone database server.
 
 Update your Ansible inventory file and make sure machine connection parameters are correct.
 
-Add the new host group `db_servers` to your inventory file. Add the new machine named "<yourname>-2"
+Add the new host group `db_servers` to your inventory file. Add the new machine named `<yourname>-2`
 there. Leave the old machine as member of the existing group `web_servers`.
 
 Once done your inventory file should look similar to this:
