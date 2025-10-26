@@ -5,7 +5,7 @@ In this lab we will setup centralized logging.
 ## Task 1: Install Loki
 
 Use VM without Prometheus. Follow the official install guide:
-https://grafana.com/docs/loki/latest/setup/install/local/#install-using-apt-or-rpm-package-manager
+https://grafana.com/docs/loki/latest/setup/install/local/#install-using-apt-or-rpm-package-manager.
 
 ## Task 2: Install Promtail
 
@@ -17,7 +17,7 @@ Files to track:
   - /var/log/nginx/access.log
   - /var/log/nginx/error.log
 
-Make sure that Promtail will keep its state in case of VM reboot (do not store anything in /tmp).
+Make sure that Promtail will keep its state in case of VM reboot (do not store anything in `/tmp`).
 
 Do not track files that do not exist.
 
@@ -25,7 +25,7 @@ Add `promtail` user to `adm` for syslog access.
 
 Allow group `adm` to read `/var/log/uwsgi/app/agama.log`.
 
-Use {{ inventory_hostname }} for hostname label.
+Use `{{ inventory_hostname }}` for hostname label.
 
 Send logs from these files to Loki.
 
@@ -33,11 +33,10 @@ Send logs from these files to Loki.
 
 Agama logs are in `/var/log/uwsgi/app/agama.log`.
 
-And allow developers to view it without login: 
-allow anonymous grafana access as viewer for Main Org.
-Docs: https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/anonymous-auth/#configuration
+And allow developers to view it without login: allow anonymous Grafana access as viewer for Main Org.
+Docs: https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/anonymous-auth/#configuration.
 
-Don't forget to add new json in your Ansible repo.
+Don't forget to add new JSON file to your Ansible repo.
 
 Don't forget to add Loki to provisioned datasources in Grafana.
 
@@ -47,7 +46,7 @@ Make sure that you gather metrics from Promtail and Loki.
 
 Add to main dashboard rate of `loki_log_messages_total` and rate of `promtail_sent_entries_total`.
 
-Don't forget to update json in your Ansible repo.
+Don't forget to update JSON file in your Ansible repo.
 
 ## Task 5: Create slo.md
 
@@ -59,32 +58,32 @@ Must have SLI types:
 
 If you feel that something is missing - add it.
 
-Docs for inspiration: https://sre.google/resources/practices-and-processes/art-of-slos/
+Docs for inspiration: https://sre.google/resources/practices-and-processes/art-of-slos/.
 
 Example from worksheet:
 
-Make sure that your SLIs have an event, a success criterion, and specify where and 
-how you record success or failure. Describe your specification as the proportion of 
-events that were good. Make sure that your SLO specifies both a target and a 
-measurement window.
+Make sure that your SLIs have an event, a success criterion, and specify where and how you record success or failure.
+Describe your specification as the proportion of events that were good.
+Make sure that your SLO specifies both a target and a measurement window.
 
-User Journey:
+    User Journey:
 
-SLI Type:
+    SLI Type:
 
-SLI Specification:
+    SLI Specification:
 
-SLI Implementations:
+    SLI Implementations:
 
-SLO:
+    SLO:
 
 ## Task 6: Setup SLI tracking
 
 Configure Nginx logs for Agama SLI tracking and start collecting them into Loki.
 
-Make sure you're collecting only `valid` events (requests to prometheus/grafana are not considered valid for main agama page SLI)! Separate access_log for agama will make it much easier.
+Make sure you're collecting only "valid" events (requests to Prometheus or Grafana are not considered valid for main Agama page SLI)!
+Separate access log for Agama will make it much easier.
 
-Adjust Grafana main dashboard, add SLO as thresholds to SLI tracking panels.
+Adjust main Grafana dashboard, add SLO as thresholds to SLI tracking panels.
 
 Examples of logQL queries for all events (not only valid ones):
 
@@ -96,7 +95,7 @@ Examples of logQL queries for all events (not only valid ones):
     )
 
     100*(
-    rate({filename="/var/log/nginx/agama.log"} 
+    rate({filename="/var/log/nginx/agama.log"}
     |~ `^[23]\\d\\d ` [10m])
     / rate({filename="/var/log/nginx/agama.log"}[10m]))
 
@@ -111,7 +110,7 @@ Useful docs: https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
 
         tc qdisc add dev ens3 root netem delay 100ms 50ms
 
-    this will add 100 ±50ms to every outgoing packet, including ping and ssh! Rollback:
+    this will add 100±50ms to every outgoing packet, including ping and SSH! Rollback:
 
         tc qdisc del dev ens3 root
 
@@ -123,8 +122,8 @@ Your repository contains these files and directories:
     group_vars/all.yaml
     hosts
     infra.yaml
-    slo.md
     roles/loki/tasks/main.yaml
+    slo.md
 
 Your repository also contains all the required files from the previous labs.
 
@@ -132,9 +131,8 @@ Your repository **does not contain** Ansible Vault master password.
 
 Everything is installed and configured with this command:
 
-	ansible-playbook infra.yaml
+    ansible-playbook infra.yaml
 
-Running the same command again does not make any changes to any of the managed
-hosts.
+Running the same command again does not make any changes to any of the managed hosts.
 
 After playbook execution you should be able to see all logs in Grafana->Drilldown->Logs.
