@@ -29,7 +29,7 @@ Update `mysql` role to configure MySQL access for a `backup` user created in the
  - MySQL user named `backup` with privileges `LOCK TABLES,SELECT` on `agama` database
  - MySQL client configuration file `/home/backup/.my.cnf`
 
-**Make sure that this `.my.cnf` file is readable only by user `backup` and noone else!**
+**Make sure that this `.my.cnf` file is readable only by user `backup` and no one else!**
 
 Hint: you did something very similar for Prometheus MySQL exporter user in the
 [lab 7](../07-grafana). But note: `backup` and `exporter` users have different `.my.cnf` files!
