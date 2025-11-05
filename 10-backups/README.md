@@ -132,6 +132,7 @@ schedules will probably be different:
 
     12 0 * * 0  backup  duplicity --no-encryption full /home/backup/mysql/ rsync://elvis@backup.x.y/mysql
     12 0 * * 1-6  backup  duplicity --no-encryption incremental /home/backup/mysql/ rsync://elvis@backup.x.y/mysql
+Remember -- the username on the backup server is case-sensitive!
 
 Make sure that whichever schedule you choose the first created backup is full -- not incremental.
 You might need to create the first full backup yourself -- just run the command from the Cron tab
