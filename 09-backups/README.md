@@ -111,7 +111,7 @@ without asking to verify the server key.
 
 Once the user is created and SSH keypair is generated for it (task 2) the public key will be
 authorized on the backup server automatically within some time (usually 15 minutes). A separate
-account will be created for your backups, account name will match your GitHub username.
+account will be created for your backups. The account name will match your **case-sensitive** GitHub username.
 
 Once the key is authorized on the backup server the `backup` user you've just created should be able
 to log in there. You can test it by running this command manually on the managed host:
@@ -124,7 +124,7 @@ Example for GitHub username `elvis` and domain `demo.tld` (modify for your names
 
 Note that user account names are different:
  - on your managed host (which is only yours) it is `backup`
- - on the backup server (which is a shared resource) it matches your GitHub username
+ - on the backup server (which is a shared resource) it matches your GitHub username (case-sensitive)
 
 If the key was authorized successfully you should get something like this in response:
 
