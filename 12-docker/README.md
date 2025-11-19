@@ -179,7 +179,7 @@ modifying the `grafana.ini` file (add or remove empty line) and running Ansible 
 
 Protect the Grafana configuration file.
 
-`/etc/grafana/grafana.ini` which is now moved to `/top/grafana/grafana.ini` on the managed host
+`/etc/grafana/grafana.ini` which is now moved to `/opt/grafana/grafana.ini` on the managed host
 still contains the Grafana admin password, and should be readable only by the Grafana itself.
 
 Note that host system and Docker container have diferent set of users, and their ids are not
