@@ -105,9 +105,7 @@ Use port 9188 to expose HAProxy stats. Do not expose stats to the internet!
 
 There are a few Keepalived exporters available, we propose to use this one: https://github.com/mehdy/keepalived-exporter. Use version [1.7.0](https://github.com/mehdy/keepalived-exporter/releases/tag/v1.7.0).
 
-Put the executable file to /usr/local/bin/prometheus-keepalived-exporter.
-
-For making a new service simply put service unit to `/etc/systemd/system/XXX.service` and reload systemd with `systemctl daemon-reload`. Ansible module `systemd_service` (former `systemd`) has special flag for it.
+For making a service out of it simply put service unit to `/etc/systemd/system/XXX.service` and reload systemd with `systemctl daemon-reload`. Ansible module `systemd_service` (former `systemd`) has special flag for it.
 
 Take inspiration of service unit file from `promtail` service or from the [docs](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html#Examples).
 
