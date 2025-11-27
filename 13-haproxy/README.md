@@ -138,7 +138,7 @@ Make sure you have:
 
 This comes with default config, so should be there already. Add log format to your `frontend` section:
 
-    log-format "%ST %Tt"
+    log-format "%ST %Tr"
 
 [Docs](https://www.haproxy.com/blog/haproxy-log-customization) for more details.
 
