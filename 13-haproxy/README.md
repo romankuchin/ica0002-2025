@@ -132,7 +132,7 @@ Since now users won't use Nginx as reverse proxy to Agama app, but will use HAPr
 
 Make sure you have:
 
-    global
+    defaults
       mode http
       option httplog
 
