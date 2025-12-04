@@ -97,7 +97,7 @@ Week 16: Final lab defences
 
 08.01.2025 16.00 - Discord
 
-05.01.2025 16.00 - Discord
+15.01.2025 16.00 - Discord
 
 You can choose any 2 times to present your final lab in addition to week 16, 3 attempts in total.
 
