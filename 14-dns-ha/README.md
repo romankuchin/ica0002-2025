@@ -66,19 +66,17 @@ Create A record for backup server in bind role.
 ## Task 5. Create records for your services
 
 CNAME records:
-- db-1, db-2    // Points to vm-names with MySQL
 - grafana       // Points to vm-name with Grafana
 - loki          // Points to vm-name with Loki
 - prometheus    // Points to vm-name with Prometheus
-- lb-1, lb-2    // Points to vm-names with HAProxy
 - ns-1, ns-2    // Points to vm-names with Bind9
 - www-1, www-2  // Points to vm-names with Agama containers
 
-Create them in the end of respective roles. For example, `grafana` CNAME should be created at the end of grafana role.
+Create them in the end of respective roles. For example, `grafana` CNAME should be created at the end of `grafana` role.
 
-Switch services configuration to CNAMES where applicable, examples: Grafana datasources, logging destinations, Agama mysql host, Prometheus targets, etc...
+Switch services configuration to CNAMEs where applicable, examples: Grafana datasources, logging destinations, etc.
 
-Prometheus targets for node-exporters can still use VM names.
+Prometheus targets for node exporters can still use VM names.
 
 ## Task 6. Create PTR records for your VMs
 
