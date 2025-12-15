@@ -39,6 +39,7 @@ Each application stack machine should have these services set up and running:
  - Secondary Bind
  - Prometheus exporters
  - Promtail
+ - Nginx as frontend for internal traffic to Agama
 
 Remaining machine should have these services set up and running:
  - Primary Bind
