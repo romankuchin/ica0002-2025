@@ -62,7 +62,7 @@ Helpful docs for Grafana: https://grafana.com/tutorials/run-grafana-behind-a-pro
 
 Don't add locations that point to unexisting services. You can use this code for checking if we should expect some path on this VM or not:
 
-    {% if inventory_hostname in groups['prometheus'] %}
+    {% if 'prometheus' in group_names %}
     location /prometheus {
         proxy_pass http://localhost:xyz/...;
     }
